@@ -1,138 +1,130 @@
-# Réseau intelligent — file de messages applicatifs civile
+# SAWM Smart Réseau
 
-Ce programme compare cinq façons d’ordonner une petite file de messages envoyés
-à un service HTTP local. Il optimise la **file applicative**, sans modifier le
-transport IP, les routes, une interface radio, le GNSS ou un appareil. Il ne
-fournit aucune fonction de navigation, de guidage ou d’anti-brouillage.
+**Mesurez, comparez et adaptez la priorité de vos messages applicatifs.**
 
-Le banc utilise uniquement `127.0.0.1` et `/messages`, sur un port éphémère créé
-localement. Aucun hôte, URL ou paramètre réseau arbitraire n’est configurable.
-Python 3.10+ et sa bibliothèque standard suffisent au moteur.
+[English](README.en.md) · [Guide technique](docs/GUIDE-TECHNIQUE.md) · [Mesures vérifiables](docs/measured-2026-10-27/benchmark.json) · [SAWM Anti-Brouillage](https://github.com/ulookme/sawm-anti-brouillage)
 
-## Exécution locale
+Quand les messages arrivent en rafales ou que le service ralentit, l’ordre de traitement compte. **SAWM Smart Réseau** aide les équipes produit et techniques à choisir une politique de file à partir de mesures : latence, respect des échéances, débit et reçus de livraison.
 
-Depuis ce dossier :
+Ce prototype d’évaluation associe une adaptation locale fondée sur les temps HTTP observés à des classements ODVL préparés dans le Cloud. Basira conserve les observations, TSST en vérifie le rappel et SAWM propose une politique bornée. Les décisions par message restent locales.
 
-```sh
-python3 queue_engine.py --count 24 --repetitions 3 --output output/offline.json
-python3 -m unittest discover -s tests -v
-```
+> **Campagne du 27 octobre 2026 : 1 080 reçus vérifiés, 0 erreur de livraison.** Cinq politiques, trois scénarios synthétiques, trois répétitions et 24 messages par passage, sur un véritable service HTTP local. Des échéances sont manquées ; le détail est conservé dans les résultats.
 
-Sans fichier d’ordres, les politiques portant le nom ODVL utilisent une liste
-identité explicitement marquée `offline_identity`. Cela ne simule pas une API
-et ne démontre aucun effet d’ODVL. Le fichier résultat doit être neuf.
+## Ce que vous pouvez évaluer
 
-## Ordres Basira réels fournis séparément
-
-```sh
-python3 workloads.py --count 24 --output output/workloads-public.json
-python3 queue_engine.py --count 24 --repetitions 3 \
-  --orders output/orders-cloud.json --policy output/policy-cloud.json \
-  --output output/benchmark-cloud-orders.json
-```
-
-L’export public exclut `service_ms`, la durée future connue seulement du serveur
-témoin. Les décisions Cloud peuvent utiliser les identifiants, arrivées,
-échéances, classes de service et tailles de charge utile. L’appel Cloud et les
-droits d’accès sont gérés séparément ; le moteur ne lit aucun identifiant secret.
-
-Le fichier `civil-odvl-orders/v1` contient un ordre par scénario, la réponse
-publique ODVL originale et une preuve avec `analysis_id`, `entity_id`,
-`memory_space_id`, `ranking_applied`, `response_sha256` et `workload_sha256`.
-L’ordre doit être une permutation exacte des tâches et correspondre aux rangs
-de la réponse. Les empreintes portent sur le JSON canonique UTF-8 : clés triées,
-séparateurs `,` et `:`, `ensure_ascii=True`. Le hash du workload porte sur
-`scenarios[nom]` de l’export public. Cette vérification prouve la cohérence du
-fichier fourni, pas une signature indépendante du Cloud.
-
-Le fichier de politique optionnel est strictement :
-
-```json
-{"schema":"civil-queue-policy/v1","ewma_alpha":0.35}
-```
-
-L’alpha est borné à `[0.1, 0.9]` et identique pour EWMA seule et EWMA+ODVL.
-Le rapport conserve son empreinte. Le rapport du contrôleur Cloud peut relier
-cette empreinte à la réponse qui l’a proposée.
-
-## Comparaison équitable
-
-Chaque politique reçoit exactement les mêmes arrivées, charges et durées du
-serveur pour un scénario donné. La concurrence maximale est toujours **4**.
-Seuls les messages déjà arrivés sont éligibles ; aucun message n’est supprimé
-par son rang. Les ordres Cloud sont chargés avant la boucle des messages.
-
-| Politique | Choix parmi les messages éligibles |
+| Votre question | Ce que SAWM Smart Réseau apporte |
 | --- | --- |
-| `fifo` | Arrivée, puis identifiant. |
-| `deadline_first` | Échéance absolue la plus proche, puis arrivée. |
-| `ewma` | Estimation de latence HTTP la plus basse par classe. |
-| `odvl` | Rang dans la liste ODVL fournie, sans estimation EWMA. |
-| `ewma_odvl` | Estimation EWMA + 25 ms × rang normalisé. |
+| Quelle stratégie convient à mes priorités ? | Cinq politiques comparées à arrivées, charges et concurrence identiques. |
+| Que se passe-t-il pendant une rafale ? | Trois scénarios déterministes : flux stable, rafales et service lent. |
+| Peut-on apprendre des temps de réponse ? | Une estimation EWMA par classe de service, mise à jour à partir des réponses déjà reçues. |
+| Peut-on expliquer et rejouer un essai ? | Rapports JSON détaillés, reçus uniques, réponses Cloud et empreintes de provenance. |
+| Le Cloud doit-il répondre pour chaque message ? | Aucun appel Cloud pendant la boucle des messages ; les fichiers validés sont chargés avant le passage. |
 
-EWMA part de 40 ms pour chaque classe et apprend exclusivement les latences HTTP
-déjà mesurées entre émission et reçu. Son état est réinitialisé à 40 ms avant chaque
-passage. Elle n’utilise jamais la durée future `service_ms`. Le coefficient de
-25 ms de l’hybride est une convention explicite du prototype, pas une calibration
-universelle.
+Le périmètre est une **file de messages applicatifs HTTP**. Le banc utilise uniquement `127.0.0.1` et des données synthétiques ; il ne se branche pas directement sur un service de production. Il ne modifie ni le routage IP ni le matériel réseau. Une intégration métier et sa validation sur des charges représentatives restent à réaliser.
 
-Trois scénarios déterministes sont fournis : `stable`, `burst` (rafales) et
-`slow_service` (service lent). La taille est bornée à 16–64 messages, 24 par
-défaut. Trois répétitions changent l’ordre des politiques par rotations et
-inversion pour répartir les effets de position ; cela ne constitue pas un plan
-statistique complet. Un passage est borné à cinq secondes d’admission, avec un
-timeout HTTP d’une seconde ; la charge normale du témoin est plus courte.
+## Une architecture qui sépare préparation et exécution
 
-## Lecture des résultats
+```mermaid
+flowchart LR
+    subgraph BEFORE["Avant l'essai · Cloud"]
+        A["Calibration locale synthétique"] --> B["Basira · mémoriser"]
+        B --> T["TSST · rappeler et vérifier"]
+        T --> S["SAWM · proposer un alpha borné"]
+        W["Candidats publics sans durées futures"] --> O["ODVL · classer"]
+        S --> V["Valider politique et ordres"]
+        O --> V
+    end
+    subgraph LOCAL["Pendant l'essai · local"]
+        V --> Q["File · FIFO / échéance / EWMA / ODVL / hybride"]
+        Q --> H["Service HTTP local · concurrence 4"]
+        H --> R["Reçus et métriques"]
+        H --> E["Latences observées · mise à jour EWMA"]
+        E --> Q
+    end
+    subgraph AFTER["Après l'essai · Cloud facultatif"]
+        R --> M["Basira · bilan mesuré"]
+        M --> U["TSST · rappel vérifié"]
+        U --> F["SAWM · analyse du bilan"]
+    end
+```
 
-Les p50/p95 mesurent la latence de bout en bout depuis l’arrivée programmée
-jusqu’au reçu HTTP validé, attente dans la file comprise. Ils utilisent une
-interpolation linéaire sur les messages reçus avec succès ; les erreurs restent
-comptées séparément. `deadline_misses` inclut les reçus après l’échéance et les
-messages non livrés. Le débit est le nombre de messages reçus divisé par la durée
-totale du passage, avec les pauses d’arrivée. Les reçus sont uniques par message
-et passage, et le serveur refuse une seconde livraison du même identifiant.
+**Basira** mémorise les résumés de calibration et de résultats. **TSST** vérifie que le résumé littéral peut être rappelé dans l’espace et l’entité attendus. **ODVL** fournit un classement statique de candidats avant l’essai. **SAWM** propose le coefficient d’apprentissage EWMA, validé entre `0.1` et `0.9`, puis peut commenter les résultats. Ses commentaires restent des avis ; les compteurs du banc font foi.
 
-Le rapport conserve chaque mesure, l’ordre d’exécution, les hashes des workloads,
-les erreurs, les maximums de concurrence et les médianes entre répétitions.
-Comparer aussi l’heuristique simple `deadline_first`, les erreurs et les
-échéances ; une baisse de p95 seule ne démontre pas une amélioration générale.
-Le bruit d’ordonnancement du système, les courtes durées et les tâches
-synthétiques limitent la portée des mesures. Aucun gain n’est garanti.
+## Des résultats qui montrent les compromis
 
-## Connexion aux quatre API publiques
+Chaque cellule indique **p95 en millisecondes / échéances manquées**. Le p95 est la médiane des trois p95 de passage, de l’arrivée programmée au reçu validé, attente comprise. Les échéances manquées sont totalisées sur les 72 messages de chaque couple politique/scénario.
 
-1. Dans <https://basira.sawm.io/espace>, sélectionner son environnement et créer une entité de service réservée aux essais. Donner au principal de la clé les droits `read, write` sur cette entité, sans `admin` ni purge. La clé doit également autoriser `events:write`, `jobs:read`, `tsst:recall`, `odvl:rank`, `sawm:run`.
-2. Copier `.env.example` **hors du dépôt** et renseigner espace et clé. Exécuter `chmod 600 /chemin/prive/basira.env`. Ne jamais mettre la clé dans un commit, un argument de commande ou une capture.
-3. Installer `python3 -m pip install -r requirements.txt`. Le moteur local utilise uniquement la bibliothèque standard ; le connecteur Cloud utilise le SDK Python officiel, recopié dans `vendor/basira_client.py` pour rendre ce dépôt autonome.
-4. Produire une calibration locale avec 16 messages par essai. Conserver un résumé compact de ses mesures (moins de 900 caractères), sans les durées futures des messages du test. Un exemple de structure est livré dans `docs/calibration-summary.json`.
+| Politique | Stable | Rafales | Service lent |
+| --- | ---: | ---: | ---: |
+| FIFO | 29,1 / 0 | 80,3 / 8 | 333,4 / 48 |
+| Échéance d’abord | 29,0 / 0 | 94,4 / 0 | 337,5 / 30 |
+| EWMA | 29,8 / 0 | 93,4 / 0 | 329,0 / 32 |
+| ODVL | 29,5 / 0 | 69,8 / 15 | 408,2 / 42 |
+| EWMA + ODVL | 29,1 / 0 | 95,2 / 6 | 345,2 / 44 |
+
+ODVL obtient le p95 le plus bas sur les rafales, avec davantage d’échéances manquées que FIFO. L’hybride EWMA + ODVL n’est pas systématiquement plus rapide ni plus ponctuel que les références. La valeur du banc est de rendre ces arbitrages visibles avant de choisir une politique.
+
+Sources : [rapport complet](docs/measured-2026-10-27/benchmark.json), [résumé mesuré](docs/measured-2026-10-27/results.json), [appels de préparation](docs/measured-2026-10-27/cloud/cloud-report.json) et [bilan Cloud](docs/measured-2026-10-27/results-cloud/cloud-report.json). Les appels archivés commencent à **15:36:29 UTC** pour la préparation et **15:40:26 UTC** pour le bilan, le 27 octobre 2026. Ces essais courts sur localhost sont sensibles à l’ordonnancement du système ; ils ne constituent ni une garantie de performance ni une validation en production.
+
+## Essayer en local
+
+Prérequis : **Python 3.10+**. Le moteur utilise uniquement la bibliothèque standard. Depuis votre copie autorisée du dépôt :
 
 ```bash
-python3 queue_engine.py --count 16 --repetitions 1 --output calibration.json
-python3 workloads.py --count 24 --output workloads-test.json
-python3 cloud_control.py prepare --kind network \
+git clone https://github.com/ulookme/sawm-smart-reseau.git
+cd sawm-smart-reseau
+python3 -m venv .venv
+source .venv/bin/activate
+python queue_engine.py --count 24 --repetitions 3 --output output/offline.json
+python -m unittest discover -s tests -v
+```
+
+Sous Windows PowerShell, activez l’environnement avec `.venv\Scripts\Activate.ps1`. Chaque fichier de sortie doit être neuf.
+
+**Ce premier essai est entièrement hors ligne.** Sans `--orders`, les politiques nommées `odvl` et `ewma_odvl` utilisent l’ordre identité, marqué `offline_identity`. Cela ne constitue pas un véritable classement ODVL et ne démontre aucun effet de cette API.
+
+Pour refaire les mesures locales avec les véritables ordres Cloud **déjà archivés**, sans nouvel appel Cloud :
+
+```bash
+python queue_engine.py --count 24 --repetitions 3 \
+  --orders docs/measured-2026-10-27/cloud/odvl-orders.json \
+  --policy docs/measured-2026-10-27/cloud/policy.json \
+  --output output/replay-cloud-orders.json
+```
+
+Les timings obtenus varieront d’un passage à l’autre. Les ordres archivés correspondent au jeu fourni de 24 messages ; un autre jeu nécessite ses propres ordres.
+
+## Préparer votre propre campagne Cloud
+
+Dans [Basira](https://basira.sawm.io/espace), sélectionnez votre espace et créez une entité de service pour les essais. Le principal de la clé doit disposer de `read, write` sur cette entité, sans `admin` ni purge, et des scopes **`events:write`, `jobs:read`, `tsst:recall`, `odvl:rank`, `sawm:run`**.
+
+Copiez [.env.example](.env.example) **hors du dépôt**, renseignez `BASIRA_SPACE` et `BASIRA_KEY`, puis appliquez `chmod 600 /chemin/prive/basira.env`. L’endpoint attendu est `https://basira-api.sawm.io/api/v1/basira`. Le connecteur utilise le SDK inclus dans `vendor/` et dépend de `httpx` :
+
+```bash
+python -m pip install -r requirements.txt
+python queue_engine.py --count 16 --repetitions 1 --output output/calibration.json
+python workloads.py --count 24 --output output/workloads-test.json
+```
+
+Créez `output/calibration-summary.json` à partir de **votre** calibration avec [l’exemple exécutable du guide](docs/GUIDE-TECHNIQUE.md#produire-les-résumés-de-votre-campagne). Il ne transmet que des agrégats synthétiques. Ensuite, remplacez le chemin privé et l’identifiant d’entité :
+
+```bash
+python cloud_control.py prepare --kind network \
   --credentials /chemin/prive/basira.env --entity ent_VOTRE_ENTITE \
-  --summary docs/calibration-summary.json --workloads workloads-test.json \
+  --summary output/calibration-summary.json --workloads output/workloads-test.json \
   --output output/cloud-prepare --run
-python3 queue_engine.py --count 24 --repetitions 3 \
+python queue_engine.py --count 24 --repetitions 3 \
   --orders output/cloud-prepare/odvl-orders.json \
   --policy output/cloud-prepare/policy.json --output output/benchmark.json
 ```
 
-Remplacer le résumé d'exemple par les mesures de **votre** calibration. Chaque répertoire de sortie doit être neuf. `--run` déclenche des appels Cloud potentiellement facturés.
+`--kind network` est le nom historique de ce mode CLI ; son périmètre reste la file applicative. **`--run` active des appels Cloud potentiellement facturés.** Chaque répertoire de sortie Cloud doit être neuf. Les durées futures `service_ms` sont exclues de l’export public et des décisions de priorité. Après l’essai, [le guide](docs/GUIDE-TECHNIQUE.md#produire-les-résumés-de-votre-campagne) explique comment générer et déposer le bilan mesuré avec `cloud_control.py record`.
 
-Le connecteur dépose ce résumé dans Basira, attend le traitement, vérifie son rappel littéral par TSST, obtient trois classements ODVL et demande à SAWM un coefficient EWMA borné. Un JSON invalide est refusé. Le coefficient est identique pour EWMA seule et EWMA + ODVL ; les durées de traitement futures restent absentes des entrées Cloud. L'ordre ODVL contient exactement les candidats fournis. Les traces relient l'ordre au jeu de travail par SHA-256.
+## Explorer le projet
 
-Après le banc, créer un résumé mesuré compact puis le déposer et demander un bilan :
+- [Guide technique](docs/GUIDE-TECHNIQUE.md) : politiques, contrats JSON, limites, provenance et campagne complète.
+- [Moteur de file](queue_engine.py), [scénarios](workloads.py), [contrôleur Cloud](cloud_control.py) et [tests](tests/).
+- [Dossier de preuves du 27 octobre 2026](docs/measured-2026-10-27/) et [rapport PDF](docs/measured-2026-10-27/report.pdf).
+- [SAWM Anti-Brouillage](https://github.com/ulookme/sawm-anti-brouillage) : le projet complémentaire consacré à la reprise et à la livraison applicative après des interruptions HTTP.
 
-```bash
-python3 cloud_control.py record --kind network \
-  --credentials /chemin/prive/basira.env --entity ent_VOTRE_ENTITE \
-  --summary mon-bilan-mesure.json --output output/cloud-results --run
-```
-
-Les fichiers `cloud-report.json`, `policy.json` et `odvl-orders.json` établissent les appels réellement effectués. Une réponse SAWM est un avis : elle ne remplace pas les compteurs du banc. Aucun appel Cloud ne bloque un message pendant les essais ; un ordre et une politique déjà validés restent utilisables hors ligne. Cela ne démontre pas un routage télécom, une garantie temps réel matériel ni une résistance au brouillage radio.
-
-## Résultat vérifié et limites
-
-Le dossier `docs/measured-2026-10-27/` contient la campagne réelle avec API Basira/TSST/ODVL/SAWM et ses métriques. Le comparatif conserve tous les résultats : l'hybride EWMA + ODVL n'est pas systématiquement meilleur que les références. Aucune promesse d'accélération universelle n'est déduite de ces essais locaux.
+**Pour un pilote client :** commencez par ce banc reproductible, définissez vos priorités de latence et d’échéance, puis évaluez une intégration sur vos propres scénarios représentatifs.
