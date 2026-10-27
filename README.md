@@ -1,5 +1,7 @@
 # SAWM Smart Réseau
 
+**Dépôt public SAWM-io.** Aucune clé ni configuration privée n’est incluse. Les identifiants des preuves sont pseudonymisés ; les moteurs restent privés. [Périmètre de publication](PUBLICATION.md).
+
 ![sawm-smart-reseau — measured software demonstration](docs/images/sawm-smart-reseau-overview.png)
 
 [Article Medium — Français](docs/articles/SAWM-SMART-RESEAU-MEDIUM.md) · [Medium article — English](docs/articles/SAWM-SMART-RESEAU-MEDIUM-EN.md)

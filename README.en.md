@@ -1,5 +1,7 @@
 # SAWM Smart Réseau
 
+**Public SAWM-io repository.** No credentials or private configuration are included. Evidence identifiers are pseudonymised; the engines remain private. [Publication scope](PUBLICATION.md).
+
 ![sawm-smart-reseau — measured software demonstration](docs/images/sawm-smart-reseau-overview.png)
 
 [Article Medium — Français](docs/articles/SAWM-SMART-RESEAU-MEDIUM.md) · [Medium article — English](docs/articles/SAWM-SMART-RESEAU-MEDIUM-EN.md)
