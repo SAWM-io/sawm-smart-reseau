@@ -1,5 +1,9 @@
 # SAWM Smart Réseau
 
+![sawm-smart-reseau — measured software demonstration](docs/images/sawm-smart-reseau-overview.png)
+
+[Article Medium — Français](docs/articles/SAWM-SMART-RESEAU-MEDIUM.md) · [Medium article — English](docs/articles/SAWM-SMART-RESEAU-MEDIUM-EN.md)
+
 **Mesurez, comparez et adaptez la priorité de vos messages applicatifs.**
 
 [English](README.en.md) · [Guide technique](docs/GUIDE-TECHNIQUE.md) · [Mesures vérifiables](docs/measured-2026-10-27/benchmark.json) · [SAWM Anti-Brouillage](https://github.com/SAWM-io/sawm-anti-brouillage)
