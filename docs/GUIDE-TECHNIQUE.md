@@ -21,6 +21,7 @@ Depuis la racine du dépôt, dans un environnement virtuel Python 3.10+ :
 python3 -m venv .venv
 source .venv/bin/activate
 python3 queue_engine.py --count 24 --repetitions 3 --output output/offline.json
+python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests -v
 ```
 

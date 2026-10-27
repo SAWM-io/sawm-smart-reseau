@@ -76,6 +76,7 @@ cd sawm-smart-reseau
 python3 -m venv .venv
 source .venv/bin/activate
 python queue_engine.py --count 24 --repetitions 3 --output output/offline.json
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
