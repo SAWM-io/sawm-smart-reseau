@@ -1,0 +1,6 @@
+{
+  "original_and_adapter_results_equal": true,
+  "comparison": "all result fields, all seeds; elapsed time and metadata excluded",
+  "original_sha256": "45f90fb6a2f7a85e8fbad3eb2b68bbb5d9e6f652f50d77363fa4e07e2203b9e3",
+  "adapter_sha256": "12a0746d6d07485f69b9d642d7760216d27d1b9320bad820dcd59a490aa1f668"
+}

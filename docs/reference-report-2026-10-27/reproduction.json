@@ -1,0 +1,272 @@
+{
+  "schema": "reference-cell-reproduction/v1",
+  "seeds": 8,
+  "steps": 400,
+  "weight": 0.5,
+  "results": {
+    "nominal": {
+      "base": [
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9983,
+          "redeplacements": 2,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0017
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9966,
+          "redeplacements": 4,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0034
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9966,
+          "redeplacements": 4,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0034
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        }
+      ],
+      "hybrid": [
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9992,
+          "redeplacements": 1,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0008
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9975,
+          "redeplacements": 3,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0025
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9966,
+          "redeplacements": 4,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0034
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        }
+      ],
+      "summary": {
+        "base": {
+          "part_absorbee": 0.9989375,
+          "redeplacements": 1.25
+        },
+        "hybrid": {
+          "part_absorbee": 0.9991625,
+          "redeplacements": 1.0
+        }
+      }
+    },
+    "serre": {
+      "base": [
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9966,
+          "redeplacements": 4,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0034
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9958,
+          "redeplacements": 5,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0042
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9966,
+          "redeplacements": 4,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0034
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 0.9899,
+          "redeplacements": 12,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0101
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne glissante",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        }
+      ],
+      "hybrid": [
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9966,
+          "redeplacements": 4,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0034
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9958,
+          "redeplacements": 5,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0042
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9975,
+          "redeplacements": 3,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0025
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 0.9907,
+          "redeplacements": 11,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0093
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        },
+        {
+          "equilibreur": "moyenne + ODVL (poids 0.5)",
+          "part_absorbee": 1.0,
+          "redeplacements": 0,
+          "decisions": 1188,
+          "taux_de_redeplacement": 0.0
+        }
+      ],
+      "summary": {
+        "base": {
+          "part_absorbee": 0.9973625,
+          "redeplacements": 3.125
+        },
+        "hybrid": {
+          "part_absorbee": 0.997575,
+          "redeplacements": 2.875
+        }
+      }
+    }
+  },
+  "elapsed_s": 3.379664500011131,
+  "source_sha256": {
+    "experiments/equilibrage-back/reseau_charge.py": "dd3ade3dd4f79d88c6adf66920b8585b51ad6af3acec6b291591ae7c047f3b7c",
+    "experiments/equilibrage-back/equilibreurs.py": "968c2c93cc873b36efd55443e6ae9db018b06a8de6ed2e04f9cf1e6b3054a359",
+    "experiments/equilibrage-back/hybrides.py": "005602d61e4a60c7a74e51c404cae6be7cfc61601ee3b05ab05deefb81e9fa42",
+    "backend/services/basira_odvl.py": "8d2d1d2a3365e9ceefaeebf98a76ed12ad74424296319e8ddc96812fce47a42c"
+  },
+  "execution": "private ODVL Python engine called directly; this comparison has no TSST arm and makes no Cloud calls"
+}

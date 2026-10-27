@@ -14,6 +14,18 @@ This evaluation prototype combines local adaptation based on observed HTTP times
 
 > **October 27, 2026 campaign: 1,080 verified receipts, 0 delivery errors.** Five policies, three synthetic scenarios, three repetitions and 24 messages per trial, against a real local HTTP service. Some deadlines were missed; the results retain that detail.
 
+## Reproducing the reference report
+
+![Reference report results — original numerical model](docs/reference-report-2026-10-27/summary.svg)
+
+**“Le Réseau qui se souvient”** uses a different benchmark from the HTTP experiments below. Its original protocol has now been replayed with the **actual private ODVL engine**, source hashes and step traces. Private engines are not distributed in this repository.
+
+**24 cells, a 12-sample moving average + ODVL, 8 seeds × 400 steps**: nominal **99.89% → 99.92%**, loaded **99.74% → 99.76%**; loaded redeployments **3.125 → 2.875**. The original protocol is reproduced; identical seeds do not ensure identical noise across methods in this simulator.
+
+[Protocol and evidence](docs/reference-report-2026-10-27/) · [Standalone visualization](docs/reference-report-2026-10-27/index.html)
+
+This replay uses stateful local ODVL, without new Cloud calls or a TSST arm. It does not replace physical radio or operator-network validation.
+
 ## What you can evaluate
 
 | Your question | What SAWM Smart Réseau provides |

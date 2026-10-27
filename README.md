@@ -14,6 +14,18 @@ Ce prototype d’évaluation associe une adaptation locale fondée sur les temps
 
 > **Campagne du 27 octobre 2026 : 1 080 reçus vérifiés, 0 erreur de livraison.** Cinq politiques, trois scénarios synthétiques, trois répétitions et 24 messages par passage, sur un véritable service HTTP local. Des échéances sont manquées ; le détail est conservé dans les résultats.
 
+## Reproduire les résultats du rapport
+
+![Reference report results — original numerical model](docs/reference-report-2026-10-27/summary.svg)
+
+Le rapport **« Le Réseau qui se souvient »** repose sur un autre banc que les essais HTTP ci-dessous. Son protocole original est maintenant rejoué avec le **moteur ODVL privé réel**, ses empreintes et ses traces. Les moteurs privés ne sont pas distribués dans ce dépôt.
+
+**24 cellules, moyenne glissante de 12 mesures + ODVL, 8 graines × 400 pas** : nominal **99,89 % → 99,92 %**, chargé **99,74 % → 99,76 %** ; redéplacements chargés **3,125 → 2,875**. Le protocole est reproduit ; les mêmes graines ne garantissent pas un bruit identique entre méthodes dans ce simulateur.
+
+[Protocole et chiffres](docs/reference-report-2026-10-27/) · [Visualisation autonome](docs/reference-report-2026-10-27/index.html)
+
+Ce rejeu utilise ODVL avec état local, sans nouvel appel Cloud ni bras TSST. Il ne remplace pas une validation radio physique ou sur réseau opérateur.
+
 ## Ce que vous pouvez évaluer
 
 | Votre question | Ce que SAWM Smart Réseau apporte |

@@ -2,5 +2,11 @@
   "monorepo": "private/not-distributed",
   "source_commit": "9b5ef79e08a34addf2ada8a9d8a0010177b7ef1e",
   "source_path": "experiments/reseau-intelligent/",
-  "export": "tracked files only"
+  "export": "tracked files only",
+  "distribution": {
+    "standalone_additions": [
+      "reference report replay adapter requiring external private stateful ODVL; source hashes and numerical step traces"
+    ],
+    "reference_validation": "docs/reference-report-2026-10-27/README.md"
+  }
 }
