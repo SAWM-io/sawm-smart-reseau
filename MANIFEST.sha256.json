@@ -1,8 +1,8 @@
 {
   ".env.example": "f209c74bbe5741acf41377a2f1ac4ef6bf0fa8ee86886709e0d40923b4147365",
   ".gitignore": "c05afe437a304d55b733e3effdb5958fd0f03caca2b485f83c69c2bf5f24ae1c",
-  "README.en.md": "9e8a0fec29eaa36095a9da18400786de33c56cb1669937784ffcd441bc54935f",
-  "README.md": "7399ba567b2d91d920ee64cc01bbf37e8151ceec9821a40b38b90c1c7a85daa7",
+  "README.en.md": "9eb95483d5ee178dfb6cdf3aff0b5cab4d9ded4a6166ac6004f8054356f9f1a0",
+  "README.md": "f0167b94b6afa251b80dac99ca65543eb5a0703d939f9bb60a33a8c07ad187d6",
   "SOURCE.json": "2e0b1dd460d27bdf29fac3c3e264c1712c7bd321ff286a4d5ec31549ffaa813d",
   "cloud_control.py": "d32e17493d36bc701d2eb028e55c00b21c88743ec628659a5c213f5021631cdb",
   "docs/GUIDE-TECHNIQUE.md": "e3b22a7a7318080c70086ba4784b4c4722c82830dbb3611a3cf5dfa1d82fd480",

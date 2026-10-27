@@ -2,7 +2,7 @@
 
 **Measure, compare and adapt the priority of your application messages.**
 
-[Français](README.md) · [Technical guide (FR)](docs/GUIDE-TECHNIQUE.md) · [Verifiable measurements](docs/measured-2026-10-27/benchmark.json) · [SAWM Anti-Brouillage](https://github.com/ulookme/sawm-anti-brouillage)
+[Français](README.md) · [Technical guide (FR)](docs/GUIDE-TECHNIQUE.md) · [Verifiable measurements](docs/measured-2026-10-27/benchmark.json) · [SAWM Anti-Brouillage](https://github.com/SAWM-io/sawm-anti-brouillage)
 
 When messages arrive in bursts or a service slows down, processing order matters. **SAWM Smart Réseau** helps product and engineering teams choose a queue policy using measurements: latency, deadline compliance, throughput and delivery receipts.
 
@@ -71,7 +71,7 @@ Sources: [full report](docs/measured-2026-10-27/benchmark.json), [measured summa
 Requirement: **Python 3.10+**. The engine uses only the standard library. From your authorized copy of the repository:
 
 ```bash
-git clone https://github.com/ulookme/sawm-smart-reseau.git
+git clone https://github.com/SAWM-io/sawm-smart-reseau.git
 cd sawm-smart-reseau
 python3 -m venv .venv
 source .venv/bin/activate
@@ -126,6 +126,6 @@ python queue_engine.py --count 24 --repetitions 3 \
 - [Technical guide (French)](docs/GUIDE-TECHNIQUE.md): policies, JSON contracts, limits, provenance and the full campaign workflow.
 - [Queue engine](queue_engine.py), [scenarios](workloads.py), [Cloud controller](cloud_control.py) and [tests](tests/).
 - [October 27, 2026 evidence bundle](docs/measured-2026-10-27/) and [PDF report](docs/measured-2026-10-27/report.pdf).
-- [SAWM Anti-Brouillage](https://github.com/ulookme/sawm-anti-brouillage): the companion project focused on application recovery and delivery after HTTP interruptions.
+- [SAWM Anti-Brouillage](https://github.com/SAWM-io/sawm-anti-brouillage): the companion project focused on application recovery and delivery after HTTP interruptions.
 
 **For a client pilot:** start with this reproducible benchmark, define your latency and deadline priorities, then evaluate an integration against representative scenarios of your own.

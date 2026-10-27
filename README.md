@@ -2,7 +2,7 @@
 
 **Mesurez, comparez et adaptez la priorité de vos messages applicatifs.**
 
-[English](README.en.md) · [Guide technique](docs/GUIDE-TECHNIQUE.md) · [Mesures vérifiables](docs/measured-2026-10-27/benchmark.json) · [SAWM Anti-Brouillage](https://github.com/ulookme/sawm-anti-brouillage)
+[English](README.en.md) · [Guide technique](docs/GUIDE-TECHNIQUE.md) · [Mesures vérifiables](docs/measured-2026-10-27/benchmark.json) · [SAWM Anti-Brouillage](https://github.com/SAWM-io/sawm-anti-brouillage)
 
 Quand les messages arrivent en rafales ou que le service ralentit, l’ordre de traitement compte. **SAWM Smart Réseau** aide les équipes produit et techniques à choisir une politique de file à partir de mesures : latence, respect des échéances, débit et reçus de livraison.
 
@@ -71,7 +71,7 @@ Sources : [rapport complet](docs/measured-2026-10-27/benchmark.json), [résumé 
 Prérequis : **Python 3.10+**. Le moteur utilise uniquement la bibliothèque standard. Depuis votre copie autorisée du dépôt :
 
 ```bash
-git clone https://github.com/ulookme/sawm-smart-reseau.git
+git clone https://github.com/SAWM-io/sawm-smart-reseau.git
 cd sawm-smart-reseau
 python3 -m venv .venv
 source .venv/bin/activate
@@ -126,6 +126,6 @@ python queue_engine.py --count 24 --repetitions 3 \
 - [Guide technique](docs/GUIDE-TECHNIQUE.md) : politiques, contrats JSON, limites, provenance et campagne complète.
 - [Moteur de file](queue_engine.py), [scénarios](workloads.py), [contrôleur Cloud](cloud_control.py) et [tests](tests/).
 - [Dossier de preuves du 27 octobre 2026](docs/measured-2026-10-27/) et [rapport PDF](docs/measured-2026-10-27/report.pdf).
-- [SAWM Anti-Brouillage](https://github.com/ulookme/sawm-anti-brouillage) : le projet complémentaire consacré à la reprise et à la livraison applicative après des interruptions HTTP.
+- [SAWM Anti-Brouillage](https://github.com/SAWM-io/sawm-anti-brouillage) : le projet complémentaire consacré à la reprise et à la livraison applicative après des interruptions HTTP.
 
 **Pour un pilote client :** commencez par ce banc reproductible, définissez vos priorités de latence et d’échéance, puis évaluez une intégration sur vos propres scénarios représentatifs.
