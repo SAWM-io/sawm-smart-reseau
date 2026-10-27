@@ -1,0 +1,4 @@
+{
+  "schema": "civil-queue-policy/v1",
+  "ewma_alpha": 0.35
+}

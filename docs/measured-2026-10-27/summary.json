@@ -1,0 +1,24 @@
+{
+  "kind": "civil_http_queue_calibration",
+  "messages_per_trial": 16,
+  "network_changes": false,
+  "cloud_used": false,
+  "scenarios": [
+    {
+      "name": "stable",
+      "fifo_p95_ms": 28.58,
+      "fifo_missed": 0
+    },
+    {
+      "name": "burst",
+      "fifo_p95_ms": 74.67,
+      "fifo_missed": 2
+    },
+    {
+      "name": "slow_service",
+      "fifo_p95_ms": 242.9,
+      "fifo_missed": 8
+    }
+  ],
+  "notes": "Endpoint localhost, observations de calibration uniquement; aucune duree future des messages du test."
+}

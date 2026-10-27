@@ -1,0 +1,298 @@
+{
+  "schema": "civil-cloud-control/v1",
+  "run_id": "civil-69b3b2314e05f1e8d6da907957463bf7",
+  "memory_space_id": "mem_6d500d795a315684ee02d994",
+  "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+  "base_url": "https://basira-api.sawm.io/api/v1/basira",
+  "real_cloud": true,
+  "calls": [
+    {
+      "operation": "basira_deposit",
+      "started_at": "2026-10-27T15:36:29.383101+00:00",
+      "completed": true,
+      "elapsed_ms": 227.451
+    },
+    {
+      "operation": "basira_job_completed",
+      "started_at": "2026-10-27T15:36:29.612354+00:00",
+      "completed": true,
+      "elapsed_ms": 1296.841
+    },
+    {
+      "operation": "tsst_recall",
+      "started_at": "2026-10-27T15:36:30.911072+00:00",
+      "completed": true,
+      "elapsed_ms": 161.464
+    },
+    {
+      "operation": "odvl_burst",
+      "started_at": "2026-10-27T15:36:31.075619+00:00",
+      "completed": true,
+      "elapsed_ms": 108.188
+    },
+    {
+      "operation": "odvl_slow_service",
+      "started_at": "2026-10-27T15:36:31.185481+00:00",
+      "completed": true,
+      "elapsed_ms": 166.197
+    },
+    {
+      "operation": "odvl_stable",
+      "started_at": "2026-10-27T15:36:31.352854+00:00",
+      "completed": true,
+      "elapsed_ms": 130.467
+    },
+    {
+      "operation": "sawm_policy",
+      "started_at": "2026-10-27T15:36:31.484060+00:00",
+      "completed": true,
+      "elapsed_ms": 1116.149
+    }
+  ],
+  "sdk_sha256": "49fff5f136e8da7a123f929de55542570dcc6fa8ad78ba317401ad50d519b397",
+  "calibration_receipt": {
+    "job_id": "job_4013ff06fe19870387f0429e3026cb18",
+    "status": "pending",
+    "accepted_count": 1,
+    "pending_count": 1,
+    "processing_count": 0,
+    "completed_count": 0,
+    "dead_letter_count": 0,
+    "semantic_index": "pending",
+    "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471"
+  },
+  "calibration_job": {
+    "job_id": "job_4013ff06fe19870387f0429e3026cb18",
+    "status": "completed",
+    "accepted_count": 1,
+    "pending_count": 0,
+    "processing_count": 0,
+    "completed_count": 1,
+    "dead_letter_count": 0,
+    "semantic_index": "ok",
+    "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471"
+  },
+  "calibration_tsst": {
+    "response": {
+      "schema": "basira-tsst-evidence/v1",
+      "memory_space_id": "mem_6d500d795a315684ee02d994",
+      "evidence": [
+        {
+          "evidence_id": "ev_3a13b3073a69752859a41eb4e1fafec3",
+          "title": "civil-69b3b2314e05f1e8d6da907957463bf7 calibration",
+          "excerpt": "{\"phase\":\"calibration\",\"run_id\":\"civil-69b3b2314e05f1e8d6da907957463bf7\",\"schema\":\"civil-lab-summary/v1\",\"source\":\"local_lab_measurements\",\"summary\":{\"cloud_used\":false,\"kind\":\"civil_http_queue_calibration\",\"messages_per_trial\":16,\"network_changes\":false,\"notes\":\"Endpoint localhost, observations de calibration uniquement; aucune duree future des messages du test.\",\"scenarios\":[{\"fifo_missed\":0,\"fifo_p95_ms\":28.58,\"name\":\"stable\"},{\"fifo_missed\":2,\"fifo_p95_ms\":74.67,\"name\":\"burst\"},{\"fifo_missed\":8,\"fifo_p95_ms\":242.9,\"name\":\"slow_service\"}]}}",
+          "score": 0.75,
+          "status": "observed",
+          "integrity_verified": true,
+          "corroborated": false,
+          "independent_provenances": 0,
+          "event_time": "2026-10-27 15:36:29.383000",
+          "knowledge_time": "2026-10-27 15:36:30.221000",
+          "source": {
+            "reference": "src_8a58d14705599969ec403e7d",
+            "page": null,
+            "section": ""
+          }
+        },
+        {
+          "confidence": 1.0,
+          "revision": 1,
+          "belief_time": "2026-10-27T15:36:29.383000+00:00",
+          "evidence_id": "ev_fec304b66909a1f12ee288809e0f7a16",
+          "title": "civil-69b3b2314e05f1e8d6da907957463bf7 calibration",
+          "excerpt": "civil-69b3b2314e05f1e8d6da907957463bf7 calibration content {\"phase\":\"calibration\",\"run_id\":\"civil-69b3b2314e05f1e8d6da907957463bf7\",\"schema\":\"civil-lab-summary/v1\",\"source\":\"local_lab_measurements\",\"summary\":{\"cloud_used\":false,\"kind\":\"civil_http_queue_calibration\",\"messages_per_trial\":16,\"network_changes\":false,\"notes\":\"Endpoint localhost, observations de calibration uniquement;",
+          "score": 0.239707,
+          "status": "observed",
+          "integrity_verified": true,
+          "corroborated": false,
+          "independent_provenances": 1,
+          "event_time": "2026-10-27T15:36:29.383000+00:00",
+          "knowledge_time": "2026-10-27T15:36:30.400000+00:00",
+          "source": {
+            "reference": "src_8a58d14705599969ec403e7d",
+            "page": null,
+            "section": ""
+          }
+        },
+        {
+          "confidence": 1.0,
+          "revision": 1,
+          "belief_time": "2026-10-27T15:36:29.383000+00:00",
+          "evidence_id": "ev_f504f74515d697dfb5473d587c42e8e5",
+          "title": "Reseau intelligent - laboratoire civil",
+          "excerpt": "Reseau intelligent - laboratoire civil mentionne civil-69b3b2314e05f1e8d6da907957463bf7 calibration",
+          "score": 0.227126,
+          "status": "observed",
+          "integrity_verified": true,
+          "corroborated": false,
+          "independent_provenances": 1,
+          "event_time": "2026-10-27T15:36:29.383000+00:00",
+          "knowledge_time": "2026-10-27T15:36:30.320000+00:00",
+          "source": {
+            "reference": "src_8a58d14705599969ec403e7d",
+            "page": null,
+            "section": ""
+          }
+        }
+      ],
+      "count": 3,
+      "flashback": false,
+      "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471"
+    },
+    "literal_record_recalled": true,
+    "matching_evidence_ids": [
+      "ev_3a13b3073a69752859a41eb4e1fafec3"
+    ],
+    "record_sha256": "22a5a8f795e7a5fcefcdf02d0ca50642bf0898acae7fabd9f239806677f1d1ef"
+  },
+  "policy_sawm": {
+    "text": "{\"schema\":\"civil-queue-policy/v1\",\"ewma_alpha\":0.35}",
+    "done": {
+      "replayed": false,
+      "turn_id": "public-demo-2fc381e3d824e4e89685",
+      "type": "turn.done"
+    },
+    "memory": {
+      "accepted_count": 2,
+      "engine": "basira-v2-exact",
+      "job_id": "job_94b484c5160428ede3e6a9ce05d68e17",
+      "status": "pending",
+      "type": "memory.committed"
+    },
+    "usage": {
+      "billing_schema": "basira-api-billing/v1",
+      "input_tokens": 352,
+      "output_tokens": 134,
+      "provider_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 913,
+        "total_tokens": 933
+      },
+      "total_tokens": 486,
+      "type": "usage.final"
+    },
+    "events": [
+      {
+        "memory": {
+          "engine": "basira-v2-exact",
+          "evidence_count": 3
+        },
+        "replayed": false,
+        "schema": "sawm-cloud/v1",
+        "session_id": "civil-69b3b2314e05f1e8d6da907957463bf7",
+        "turn_id": "public-demo-2fc381e3d824e4e89685",
+        "type": "turn.accepted"
+      },
+      {
+        "delta": "{\"",
+        "type": "response.delta"
+      },
+      {
+        "delta": "schema",
+        "type": "response.delta"
+      },
+      {
+        "delta": "\":\"",
+        "type": "response.delta"
+      },
+      {
+        "delta": "civil",
+        "type": "response.delta"
+      },
+      {
+        "delta": "-",
+        "type": "response.delta"
+      },
+      {
+        "delta": "queue",
+        "type": "response.delta"
+      },
+      {
+        "delta": "-p",
+        "type": "response.delta"
+      },
+      {
+        "delta": "olicy",
+        "type": "response.delta"
+      },
+      {
+        "delta": "/v",
+        "type": "response.delta"
+      },
+      {
+        "delta": "1",
+        "type": "response.delta"
+      },
+      {
+        "delta": "\",\"",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ew",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ma",
+        "type": "response.delta"
+      },
+      {
+        "delta": "_",
+        "type": "response.delta"
+      },
+      {
+        "delta": "alpha",
+        "type": "response.delta"
+      },
+      {
+        "delta": "\":",
+        "type": "response.delta"
+      },
+      {
+        "delta": "0",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".",
+        "type": "response.delta"
+      },
+      {
+        "delta": "35",
+        "type": "response.delta"
+      },
+      {
+        "delta": "}",
+        "type": "response.delta"
+      },
+      {
+        "accepted_count": 2,
+        "engine": "basira-v2-exact",
+        "job_id": "job_94b484c5160428ede3e6a9ce05d68e17",
+        "status": "pending",
+        "type": "memory.committed"
+      },
+      {
+        "billing_schema": "basira-api-billing/v1",
+        "input_tokens": 352,
+        "output_tokens": 134,
+        "provider_usage": {
+          "completion_tokens": 20,
+          "prompt_tokens": 913,
+          "total_tokens": 933
+        },
+        "total_tokens": 486,
+        "type": "usage.final"
+      },
+      {
+        "replayed": false,
+        "turn_id": "public-demo-2fc381e3d824e4e89685",
+        "type": "turn.done"
+      }
+    ]
+  },
+  "policy_validated": true,
+  "policy_sha256": "471b830ba53d6dd36151dfb9ea3adf54c4f54e8502b02a91096bd51d8f5092e2",
+  "policy": {
+    "schema": "civil-queue-policy/v1",
+    "ewma_alpha": 0.35
+  }
+}

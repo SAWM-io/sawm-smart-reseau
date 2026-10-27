@@ -1,0 +1,504 @@
+{
+  "schema": "civil-odvl-orders/v1",
+  "source": "basira_cloud",
+  "scenarios": {
+    "burst": {
+      "task_ids": [
+        "msg-0012",
+        "msg-0020",
+        "msg-0004",
+        "msg-0016",
+        "msg-0008",
+        "msg-0000",
+        "msg-0001",
+        "msg-0013",
+        "msg-0017",
+        "msg-0005",
+        "msg-0009",
+        "msg-0021",
+        "msg-0007",
+        "msg-0022",
+        "msg-0003",
+        "msg-0010",
+        "msg-0023",
+        "msg-0018",
+        "msg-0015",
+        "msg-0019",
+        "msg-0002",
+        "msg-0011",
+        "msg-0014",
+        "msg-0006"
+      ],
+      "response": {
+        "schema": "basira-odvl-ranking/v1",
+        "memory_space_id": "mem_6d500d795a315684ee02d994",
+        "ranking": [
+          {
+            "candidate_id": "msg-0012",
+            "score": 0.357143,
+            "rank": 1
+          },
+          {
+            "candidate_id": "msg-0020",
+            "score": 0.357143,
+            "rank": 2
+          },
+          {
+            "candidate_id": "msg-0004",
+            "score": 0.357143,
+            "rank": 3
+          },
+          {
+            "candidate_id": "msg-0016",
+            "score": 0.357143,
+            "rank": 4
+          },
+          {
+            "candidate_id": "msg-0008",
+            "score": 0.357143,
+            "rank": 5
+          },
+          {
+            "candidate_id": "msg-0000",
+            "score": 0.357143,
+            "rank": 6
+          },
+          {
+            "candidate_id": "msg-0001",
+            "score": 0.526316,
+            "rank": 7
+          },
+          {
+            "candidate_id": "msg-0013",
+            "score": 0.526316,
+            "rank": 8
+          },
+          {
+            "candidate_id": "msg-0017",
+            "score": 0.526316,
+            "rank": 9
+          },
+          {
+            "candidate_id": "msg-0005",
+            "score": 0.526316,
+            "rank": 10
+          },
+          {
+            "candidate_id": "msg-0009",
+            "score": 0.526316,
+            "rank": 11
+          },
+          {
+            "candidate_id": "msg-0021",
+            "score": 0.526316,
+            "rank": 12
+          },
+          {
+            "candidate_id": "msg-0007",
+            "score": 0.606061,
+            "rank": 13
+          },
+          {
+            "candidate_id": "msg-0022",
+            "score": 0.606061,
+            "rank": 14
+          },
+          {
+            "candidate_id": "msg-0003",
+            "score": 0.606061,
+            "rank": 15
+          },
+          {
+            "candidate_id": "msg-0010",
+            "score": 0.606061,
+            "rank": 16
+          },
+          {
+            "candidate_id": "msg-0023",
+            "score": 0.606061,
+            "rank": 17
+          },
+          {
+            "candidate_id": "msg-0018",
+            "score": 0.606061,
+            "rank": 18
+          },
+          {
+            "candidate_id": "msg-0015",
+            "score": 0.606061,
+            "rank": 19
+          },
+          {
+            "candidate_id": "msg-0019",
+            "score": 0.606061,
+            "rank": 20
+          },
+          {
+            "candidate_id": "msg-0002",
+            "score": 0.606061,
+            "rank": 21
+          },
+          {
+            "candidate_id": "msg-0011",
+            "score": 0.606061,
+            "rank": 22
+          },
+          {
+            "candidate_id": "msg-0014",
+            "score": 0.606061,
+            "rank": 23
+          },
+          {
+            "candidate_id": "msg-0006",
+            "score": 0.606061,
+            "rank": 24
+          }
+        ],
+        "count": 24,
+        "reordered": true,
+        "ranking_applied": true,
+        "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471"
+      },
+      "proof": {
+        "analysis_id": "civil-69b3b2314e05f1e8d6da907957463bf7:burst",
+        "response_sha256": "9ad6623ec054cb39e62e0b0b63e9aad50282d0c61c6663b8cd0348c3505a30ea",
+        "workload_sha256": "e2d18915b79da48d111acfb5eadf0948d975ec2bb9892d3ce603c8ae2f1fcecb",
+        "memory_space_id": "mem_6d500d795a315684ee02d994",
+        "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+        "ranking_applied": true
+      }
+    },
+    "slow_service": {
+      "task_ids": [
+        "msg-0016",
+        "msg-0008",
+        "msg-0004",
+        "msg-0020",
+        "msg-0012",
+        "msg-0000",
+        "msg-0017",
+        "msg-0005",
+        "msg-0009",
+        "msg-0013",
+        "msg-0021",
+        "msg-0001",
+        "msg-0010",
+        "msg-0022",
+        "msg-0006",
+        "msg-0018",
+        "msg-0014",
+        "msg-0002",
+        "msg-0003",
+        "msg-0015",
+        "msg-0011",
+        "msg-0019",
+        "msg-0023",
+        "msg-0007"
+      ],
+      "response": {
+        "schema": "basira-odvl-ranking/v1",
+        "memory_space_id": "mem_6d500d795a315684ee02d994",
+        "ranking": [
+          {
+            "candidate_id": "msg-0016",
+            "score": 0.3125,
+            "rank": 1
+          },
+          {
+            "candidate_id": "msg-0008",
+            "score": 0.3125,
+            "rank": 2
+          },
+          {
+            "candidate_id": "msg-0004",
+            "score": 0.3125,
+            "rank": 3
+          },
+          {
+            "candidate_id": "msg-0020",
+            "score": 0.3125,
+            "rank": 4
+          },
+          {
+            "candidate_id": "msg-0012",
+            "score": 0.3125,
+            "rank": 5
+          },
+          {
+            "candidate_id": "msg-0000",
+            "score": 0.3125,
+            "rank": 6
+          },
+          {
+            "candidate_id": "msg-0017",
+            "score": 0.3125,
+            "rank": 7
+          },
+          {
+            "candidate_id": "msg-0005",
+            "score": 0.3125,
+            "rank": 8
+          },
+          {
+            "candidate_id": "msg-0009",
+            "score": 0.3125,
+            "rank": 9
+          },
+          {
+            "candidate_id": "msg-0013",
+            "score": 0.3125,
+            "rank": 10
+          },
+          {
+            "candidate_id": "msg-0021",
+            "score": 0.3125,
+            "rank": 11
+          },
+          {
+            "candidate_id": "msg-0001",
+            "score": 0.3125,
+            "rank": 12
+          },
+          {
+            "candidate_id": "msg-0010",
+            "score": 0.416667,
+            "rank": 13
+          },
+          {
+            "candidate_id": "msg-0022",
+            "score": 0.416667,
+            "rank": 14
+          },
+          {
+            "candidate_id": "msg-0006",
+            "score": 0.416667,
+            "rank": 15
+          },
+          {
+            "candidate_id": "msg-0018",
+            "score": 0.416667,
+            "rank": 16
+          },
+          {
+            "candidate_id": "msg-0014",
+            "score": 0.416667,
+            "rank": 17
+          },
+          {
+            "candidate_id": "msg-0002",
+            "score": 0.416667,
+            "rank": 18
+          },
+          {
+            "candidate_id": "msg-0003",
+            "score": 0.5,
+            "rank": 19
+          },
+          {
+            "candidate_id": "msg-0015",
+            "score": 0.5,
+            "rank": 20
+          },
+          {
+            "candidate_id": "msg-0011",
+            "score": 0.5,
+            "rank": 21
+          },
+          {
+            "candidate_id": "msg-0019",
+            "score": 0.5,
+            "rank": 22
+          },
+          {
+            "candidate_id": "msg-0023",
+            "score": 0.5,
+            "rank": 23
+          },
+          {
+            "candidate_id": "msg-0007",
+            "score": 0.5,
+            "rank": 24
+          }
+        ],
+        "count": 24,
+        "reordered": true,
+        "ranking_applied": true,
+        "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471"
+      },
+      "proof": {
+        "analysis_id": "civil-69b3b2314e05f1e8d6da907957463bf7:slow_service",
+        "response_sha256": "18a1de3a236260426299c9d63b5c3ab43650deb3731dc4b771c3590afd9cdcbc",
+        "workload_sha256": "97fe6374acc2cd44115ca7093e3625723a1ac159f57c506bb97164ec3e5a92ee",
+        "memory_space_id": "mem_6d500d795a315684ee02d994",
+        "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+        "ranking_applied": true
+      }
+    },
+    "stable": {
+      "task_ids": [
+        "msg-0020",
+        "msg-0008",
+        "msg-0016",
+        "msg-0012",
+        "msg-0004",
+        "msg-0000",
+        "msg-0013",
+        "msg-0017",
+        "msg-0001",
+        "msg-0005",
+        "msg-0021",
+        "msg-0009",
+        "msg-0006",
+        "msg-0014",
+        "msg-0018",
+        "msg-0022",
+        "msg-0010",
+        "msg-0002",
+        "msg-0019",
+        "msg-0023",
+        "msg-0003",
+        "msg-0011",
+        "msg-0015",
+        "msg-0007"
+      ],
+      "response": {
+        "schema": "basira-odvl-ranking/v1",
+        "memory_space_id": "mem_6d500d795a315684ee02d994",
+        "ranking": [
+          {
+            "candidate_id": "msg-0020",
+            "score": 0.5,
+            "rank": 1
+          },
+          {
+            "candidate_id": "msg-0008",
+            "score": 0.5,
+            "rank": 2
+          },
+          {
+            "candidate_id": "msg-0016",
+            "score": 0.5,
+            "rank": 3
+          },
+          {
+            "candidate_id": "msg-0012",
+            "score": 0.5,
+            "rank": 4
+          },
+          {
+            "candidate_id": "msg-0004",
+            "score": 0.5,
+            "rank": 5
+          },
+          {
+            "candidate_id": "msg-0000",
+            "score": 0.5,
+            "rank": 6
+          },
+          {
+            "candidate_id": "msg-0013",
+            "score": 0.5,
+            "rank": 7
+          },
+          {
+            "candidate_id": "msg-0017",
+            "score": 0.5,
+            "rank": 8
+          },
+          {
+            "candidate_id": "msg-0001",
+            "score": 0.5,
+            "rank": 9
+          },
+          {
+            "candidate_id": "msg-0005",
+            "score": 0.5,
+            "rank": 10
+          },
+          {
+            "candidate_id": "msg-0021",
+            "score": 0.5,
+            "rank": 11
+          },
+          {
+            "candidate_id": "msg-0009",
+            "score": 0.5,
+            "rank": 12
+          },
+          {
+            "candidate_id": "msg-0006",
+            "score": 0.5,
+            "rank": 13
+          },
+          {
+            "candidate_id": "msg-0014",
+            "score": 0.5,
+            "rank": 14
+          },
+          {
+            "candidate_id": "msg-0018",
+            "score": 0.5,
+            "rank": 15
+          },
+          {
+            "candidate_id": "msg-0022",
+            "score": 0.5,
+            "rank": 16
+          },
+          {
+            "candidate_id": "msg-0010",
+            "score": 0.5,
+            "rank": 17
+          },
+          {
+            "candidate_id": "msg-0002",
+            "score": 0.5,
+            "rank": 18
+          },
+          {
+            "candidate_id": "msg-0019",
+            "score": 0.5,
+            "rank": 19
+          },
+          {
+            "candidate_id": "msg-0023",
+            "score": 0.5,
+            "rank": 20
+          },
+          {
+            "candidate_id": "msg-0003",
+            "score": 0.5,
+            "rank": 21
+          },
+          {
+            "candidate_id": "msg-0011",
+            "score": 0.5,
+            "rank": 22
+          },
+          {
+            "candidate_id": "msg-0015",
+            "score": 0.5,
+            "rank": 23
+          },
+          {
+            "candidate_id": "msg-0007",
+            "score": 0.5,
+            "rank": 24
+          }
+        ],
+        "count": 24,
+        "reordered": true,
+        "ranking_applied": true,
+        "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471"
+      },
+      "proof": {
+        "analysis_id": "civil-69b3b2314e05f1e8d6da907957463bf7:stable",
+        "response_sha256": "9eb7243d0c20ecd06d7e66c33cd76fcbd59b2b135775a4e8d329f3a77929da7b",
+        "workload_sha256": "74dc509feeeca4e1f1f540ac59ce71f80a6a90f16d37e9a64576dbf748cc450f",
+        "memory_space_id": "mem_6d500d795a315684ee02d994",
+        "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+        "ranking_applied": true
+      }
+    }
+  }
+}

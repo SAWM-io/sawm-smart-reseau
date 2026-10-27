@@ -1,0 +1,1198 @@
+{
+  "schema": "civil-cloud-control/v1",
+  "run_id": "civil-f6c8ceab9496d358ba0b3cd3e52f9103",
+  "memory_space_id": "mem_6d500d795a315684ee02d994",
+  "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+  "base_url": "https://basira-api.sawm.io/api/v1/basira",
+  "real_cloud": true,
+  "completed": true,
+  "calls": [
+    {
+      "operation": "basira_deposit",
+      "started_at": "2026-10-27T15:40:26.166577+00:00",
+      "completed": true,
+      "elapsed_ms": 258.502
+    },
+    {
+      "operation": "basira_job_completed",
+      "started_at": "2026-10-27T15:40:26.426991+00:00",
+      "completed": true,
+      "elapsed_ms": 1167.025
+    },
+    {
+      "operation": "tsst_recall",
+      "started_at": "2026-10-27T15:40:27.594620+00:00",
+      "completed": true,
+      "elapsed_ms": 185.898
+    },
+    {
+      "operation": "sawm_review",
+      "started_at": "2026-10-27T15:40:27.783314+00:00",
+      "completed": true,
+      "elapsed_ms": 2253.731
+    }
+  ],
+  "sdk_sha256": "49fff5f136e8da7a123f929de55542570dcc6fa8ad78ba317401ad50d519b397",
+  "results_receipt": {
+    "job_id": "job_0d6c44581aa753f75102db147027a7fc",
+    "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+    "status": "pending",
+    "accepted_count": 1,
+    "pending_count": 1,
+    "processing_count": 0,
+    "completed_count": 0,
+    "dead_letter_count": 0
+  },
+  "results_job": {
+    "job_id": "job_0d6c44581aa753f75102db147027a7fc",
+    "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+    "status": "completed",
+    "accepted_count": 1,
+    "pending_count": 0,
+    "processing_count": 0,
+    "completed_count": 1,
+    "dead_letter_count": 0
+  },
+  "results_tsst": {
+    "response_metadata": {
+      "schema": "basira-tsst-evidence/v1",
+      "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+      "memory_space_id": "mem_6d500d795a315684ee02d994",
+      "returned_count": 8,
+      "response_sha256": "40b31c47d451520b2dd61fca622777c21814836b98847ce7558a974ee535d559"
+    },
+    "literal_record_recalled": true,
+    "matching_evidence": [
+      {
+        "evidence_id": "ev_36bae5509ca22d09cde38d562a340a36",
+        "integrity_verified": true,
+        "literal_record_present": true,
+        "excerpt_sha256": "abcab1616ff36a1865f8c61c6a81969418b6b47967ee2551ac18e33ba4799f86"
+      }
+    ],
+    "matching_evidence_ids": [
+      "ev_36bae5509ca22d09cde38d562a340a36"
+    ],
+    "record_sha256": "abcab1616ff36a1865f8c61c6a81969418b6b47967ee2551ac18e33ba4799f86"
+  },
+  "review_sawm": {
+    "text": "Bilan (mesures locales HTTP synthétiques) :\n\nMesuré : 24 messages, 3 répétitions, 1080 reçus, 0 erreur. P95 observés (ms) — stable : FIFO 29,1 ; EWMA 29,8 ; EWMA+ODVL 29,1 ; ODVL 29,5 ; deadline_first 29,0. burst : FIFO 80,3 ; EWMA 93,4 ; EWMA+ODVL 95,2 ; ODVL 69,8 ; deadline_first 94,4. slow_service : FIFO 333,4 ; EWMA 329,0 ; EWMA+ODVL 345,2 ; ODVL 408,2 ; deadline_first 337,5.\n\nHypothèses/cadre : labo localhost uniquement (aucune radio, aucun changement réseau), charges synthétiques, aucune durée future fournie, alpha EWMA fixé à 0,35 ; classement ODVL seulement consultatif, sans supériorité supposée. Les différences ne sont ni extrapolées à un contexte télécom ni assimilées à du contre-brouillage ; aucun gain chiffré non calculable n'est revendiqué.",
+    "done": {
+      "replayed": false,
+      "turn_id": "public-demo-71ff371474960f060eae",
+      "type": "turn.done"
+    },
+    "memory": {
+      "accepted_count": 2,
+      "engine": "basira-v2-exact",
+      "job_id": "job_cdef95a4ae193ebbc02796870377444f",
+      "status": "pending",
+      "type": "memory.committed"
+    },
+    "usage": {
+      "billing_schema": "basira-api-billing/v1",
+      "input_tokens": 285,
+      "output_tokens": 318,
+      "provider_usage": {
+        "completion_tokens": 264,
+        "prompt_tokens": 1477,
+        "total_tokens": 1741
+      },
+      "total_tokens": 603,
+      "type": "usage.final"
+    },
+    "events": [
+      {
+        "memory": {
+          "engine": "basira-v2-exact",
+          "evidence_count": 5
+        },
+        "replayed": false,
+        "schema": "sawm-cloud/v1",
+        "session_id": "civil-f6c8ceab9496d358ba0b3cd3e52f9103",
+        "turn_id": "public-demo-71ff371474960f060eae",
+        "type": "turn.accepted"
+      },
+      {
+        "delta": "B",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ilan",
+        "type": "response.delta"
+      },
+      {
+        "delta": " (",
+        "type": "response.delta"
+      },
+      {
+        "delta": "mes",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ures",
+        "type": "response.delta"
+      },
+      {
+        "delta": " locales",
+        "type": "response.delta"
+      },
+      {
+        "delta": " HTTP",
+        "type": "response.delta"
+      },
+      {
+        "delta": " synth",
+        "type": "response.delta"
+      },
+      {
+        "delta": "étiques",
+        "type": "response.delta"
+      },
+      {
+        "delta": ")",
+        "type": "response.delta"
+      },
+      {
+        "delta": " :\n\n",
+        "type": "response.delta"
+      },
+      {
+        "delta": "Mes",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ur",
+        "type": "response.delta"
+      },
+      {
+        "delta": "é",
+        "type": "response.delta"
+      },
+      {
+        "delta": " :",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "24",
+        "type": "response.delta"
+      },
+      {
+        "delta": " messages",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "3",
+        "type": "response.delta"
+      },
+      {
+        "delta": " rép",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ét",
+        "type": "response.delta"
+      },
+      {
+        "delta": "itions",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "108",
+        "type": "response.delta"
+      },
+      {
+        "delta": "0",
+        "type": "response.delta"
+      },
+      {
+        "delta": " re",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ç",
+        "type": "response.delta"
+      },
+      {
+        "delta": "us",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "0",
+        "type": "response.delta"
+      },
+      {
+        "delta": " erre",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ur",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".",
+        "type": "response.delta"
+      },
+      {
+        "delta": " P",
+        "type": "response.delta"
+      },
+      {
+        "delta": "95",
+        "type": "response.delta"
+      },
+      {
+        "delta": " observ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "és",
+        "type": "response.delta"
+      },
+      {
+        "delta": " (",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ms",
+        "type": "response.delta"
+      },
+      {
+        "delta": ")",
+        "type": "response.delta"
+      },
+      {
+        "delta": " —",
+        "type": "response.delta"
+      },
+      {
+        "delta": " stable",
+        "type": "response.delta"
+      },
+      {
+        "delta": " :",
+        "type": "response.delta"
+      },
+      {
+        "delta": " FIF",
+        "type": "response.delta"
+      },
+      {
+        "delta": "O",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "29",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "1",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "29",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "8",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": "+",
+        "type": "response.delta"
+      },
+      {
+        "delta": "OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "29",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "1",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "29",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "5",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " deadline",
+        "type": "response.delta"
+      },
+      {
+        "delta": "_first",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "29",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "0",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".",
+        "type": "response.delta"
+      },
+      {
+        "delta": " burst",
+        "type": "response.delta"
+      },
+      {
+        "delta": " :",
+        "type": "response.delta"
+      },
+      {
+        "delta": " FIF",
+        "type": "response.delta"
+      },
+      {
+        "delta": "O",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "80",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "3",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "93",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "4",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": "+",
+        "type": "response.delta"
+      },
+      {
+        "delta": "OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "95",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "2",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "69",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "8",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " deadline",
+        "type": "response.delta"
+      },
+      {
+        "delta": "_first",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "94",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "4",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".",
+        "type": "response.delta"
+      },
+      {
+        "delta": " slow",
+        "type": "response.delta"
+      },
+      {
+        "delta": "_service",
+        "type": "response.delta"
+      },
+      {
+        "delta": " :",
+        "type": "response.delta"
+      },
+      {
+        "delta": " FIF",
+        "type": "response.delta"
+      },
+      {
+        "delta": "O",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "333",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "4",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "329",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "0",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": "+",
+        "type": "response.delta"
+      },
+      {
+        "delta": "OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "345",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "2",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "408",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "2",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " deadline",
+        "type": "response.delta"
+      },
+      {
+        "delta": "_first",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "337",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "5",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".\n\n",
+        "type": "response.delta"
+      },
+      {
+        "delta": "Hyp",
+        "type": "response.delta"
+      },
+      {
+        "delta": "oth",
+        "type": "response.delta"
+      },
+      {
+        "delta": "è",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ses",
+        "type": "response.delta"
+      },
+      {
+        "delta": "/c",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ad",
+        "type": "response.delta"
+      },
+      {
+        "delta": "re",
+        "type": "response.delta"
+      },
+      {
+        "delta": " :",
+        "type": "response.delta"
+      },
+      {
+        "delta": " lab",
+        "type": "response.delta"
+      },
+      {
+        "delta": "o",
+        "type": "response.delta"
+      },
+      {
+        "delta": " local",
+        "type": "response.delta"
+      },
+      {
+        "delta": "host",
+        "type": "response.delta"
+      },
+      {
+        "delta": " uniqu",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ement",
+        "type": "response.delta"
+      },
+      {
+        "delta": " (",
+        "type": "response.delta"
+      },
+      {
+        "delta": "auc",
+        "type": "response.delta"
+      },
+      {
+        "delta": "une",
+        "type": "response.delta"
+      },
+      {
+        "delta": " radio",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " aucun",
+        "type": "response.delta"
+      },
+      {
+        "delta": " changement",
+        "type": "response.delta"
+      },
+      {
+        "delta": " réseau",
+        "type": "response.delta"
+      },
+      {
+        "delta": "),",
+        "type": "response.delta"
+      },
+      {
+        "delta": " charges",
+        "type": "response.delta"
+      },
+      {
+        "delta": " synth",
+        "type": "response.delta"
+      },
+      {
+        "delta": "étiques",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " aucune",
+        "type": "response.delta"
+      },
+      {
+        "delta": " durée",
+        "type": "response.delta"
+      },
+      {
+        "delta": " future",
+        "type": "response.delta"
+      },
+      {
+        "delta": " four",
+        "type": "response.delta"
+      },
+      {
+        "delta": "nie",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " alpha",
+        "type": "response.delta"
+      },
+      {
+        "delta": " EW",
+        "type": "response.delta"
+      },
+      {
+        "delta": "MA",
+        "type": "response.delta"
+      },
+      {
+        "delta": " fix",
+        "type": "response.delta"
+      },
+      {
+        "delta": "é",
+        "type": "response.delta"
+      },
+      {
+        "delta": " à",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ",
+        "type": "response.delta"
+      },
+      {
+        "delta": "0",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": "35",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " class",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ement",
+        "type": "response.delta"
+      },
+      {
+        "delta": " OD",
+        "type": "response.delta"
+      },
+      {
+        "delta": "VL",
+        "type": "response.delta"
+      },
+      {
+        "delta": " seulement",
+        "type": "response.delta"
+      },
+      {
+        "delta": " consult",
+        "type": "response.delta"
+      },
+      {
+        "delta": "atif",
+        "type": "response.delta"
+      },
+      {
+        "delta": ",",
+        "type": "response.delta"
+      },
+      {
+        "delta": " sans",
+        "type": "response.delta"
+      },
+      {
+        "delta": " sup",
+        "type": "response.delta"
+      },
+      {
+        "delta": "éri",
+        "type": "response.delta"
+      },
+      {
+        "delta": "or",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ité",
+        "type": "response.delta"
+      },
+      {
+        "delta": " supp",
+        "type": "response.delta"
+      },
+      {
+        "delta": "os",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ée",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".",
+        "type": "response.delta"
+      },
+      {
+        "delta": " Les",
+        "type": "response.delta"
+      },
+      {
+        "delta": " diffé",
+        "type": "response.delta"
+      },
+      {
+        "delta": "rences",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ne",
+        "type": "response.delta"
+      },
+      {
+        "delta": " sont",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ni",
+        "type": "response.delta"
+      },
+      {
+        "delta": " extrap",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ol",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ées",
+        "type": "response.delta"
+      },
+      {
+        "delta": " à",
+        "type": "response.delta"
+      },
+      {
+        "delta": " un",
+        "type": "response.delta"
+      },
+      {
+        "delta": " contexte",
+        "type": "response.delta"
+      },
+      {
+        "delta": " télé",
+        "type": "response.delta"
+      },
+      {
+        "delta": "com",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ni",
+        "type": "response.delta"
+      },
+      {
+        "delta": " assimil",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ées",
+        "type": "response.delta"
+      },
+      {
+        "delta": " à",
+        "type": "response.delta"
+      },
+      {
+        "delta": " du",
+        "type": "response.delta"
+      },
+      {
+        "delta": " contre",
+        "type": "response.delta"
+      },
+      {
+        "delta": "-b",
+        "type": "response.delta"
+      },
+      {
+        "delta": "rou",
+        "type": "response.delta"
+      },
+      {
+        "delta": "illage",
+        "type": "response.delta"
+      },
+      {
+        "delta": " ;",
+        "type": "response.delta"
+      },
+      {
+        "delta": " aucun",
+        "type": "response.delta"
+      },
+      {
+        "delta": " gain",
+        "type": "response.delta"
+      },
+      {
+        "delta": " chiff",
+        "type": "response.delta"
+      },
+      {
+        "delta": "ré",
+        "type": "response.delta"
+      },
+      {
+        "delta": " non",
+        "type": "response.delta"
+      },
+      {
+        "delta": " calcul",
+        "type": "response.delta"
+      },
+      {
+        "delta": "able",
+        "type": "response.delta"
+      },
+      {
+        "delta": " n",
+        "type": "response.delta"
+      },
+      {
+        "delta": "'est",
+        "type": "response.delta"
+      },
+      {
+        "delta": " rev",
+        "type": "response.delta"
+      },
+      {
+        "delta": "end",
+        "type": "response.delta"
+      },
+      {
+        "delta": "iqué",
+        "type": "response.delta"
+      },
+      {
+        "delta": ".",
+        "type": "response.delta"
+      },
+      {
+        "accepted_count": 2,
+        "engine": "basira-v2-exact",
+        "job_id": "job_cdef95a4ae193ebbc02796870377444f",
+        "status": "pending",
+        "type": "memory.committed"
+      },
+      {
+        "billing_schema": "basira-api-billing/v1",
+        "input_tokens": 285,
+        "output_tokens": 318,
+        "provider_usage": {
+          "completion_tokens": 264,
+          "prompt_tokens": 1477,
+          "total_tokens": 1741
+        },
+        "total_tokens": 603,
+        "type": "usage.final"
+      },
+      {
+        "replayed": false,
+        "turn_id": "public-demo-71ff371474960f060eae",
+        "type": "turn.done"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "queue_measured_results",
+  "messages": 24,
+  "repetitions": 3,
+  "receipts": 1080,
+  "errors": 0,
+  "p95_ms": {
+    "stable": {
+      "fifo": 29.1,
+      "deadline_first": 29.0,
+      "ewma": 29.8,
+      "odvl": 29.5,
+      "ewma_odvl": 29.1
+    },
+    "burst": {
+      "fifo": 80.3,
+      "deadline_first": 94.4,
+      "ewma": 93.4,
+      "odvl": 69.8,
+      "ewma_odvl": 95.2
+    },
+    "slow_service": {
+      "fifo": 333.4,
+      "deadline_first": 337.5,
+      "ewma": 329.0,
+      "odvl": 408.2,
+      "ewma_odvl": 345.2
+    }
+  },
+  "scope": "real localhost HTTP; synthetic workloads; no radio"
+}

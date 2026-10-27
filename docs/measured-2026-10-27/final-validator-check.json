@@ -1,0 +1,28 @@
+{
+  "validated": true,
+  "phase": "calibration",
+  "real_api_rerun": false,
+  "original_report_sha256": "8d9c652d8a149b7d349f601c5cedbff292767ddda8ceb4aca813ce66d2e563f3",
+  "literal_recall_proof": {
+    "response_metadata": {
+      "schema": "basira-tsst-evidence/v1",
+      "entity_id": "ent_7c4be1e96e72b4035b94ab8fdec52471",
+      "memory_space_id": "mem_6d500d795a315684ee02d994",
+      "returned_count": 3,
+      "response_sha256": "6d98054da4ab146ebd26ef1bc103e3944624d0d3d9cc408cf13a5a2f1b1f3aca"
+    },
+    "literal_record_recalled": true,
+    "matching_evidence": [
+      {
+        "evidence_id": "ev_3a13b3073a69752859a41eb4e1fafec3",
+        "integrity_verified": true,
+        "literal_record_present": true,
+        "excerpt_sha256": "22a5a8f795e7a5fcefcdf02d0ca50642bf0898acae7fabd9f239806677f1d1ef"
+      }
+    ],
+    "matching_evidence_ids": [
+      "ev_3a13b3073a69752859a41eb4e1fafec3"
+    ],
+    "record_sha256": "22a5a8f795e7a5fcefcdf02d0ca50642bf0898acae7fabd9f239806677f1d1ef"
+  }
+}
